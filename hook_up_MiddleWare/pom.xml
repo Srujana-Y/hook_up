@@ -14,6 +14,12 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    
+    <dependency>
+    <groupId>com</groupId>
+    <artifactId>hook_up_BackEnd</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>hook_up_MiddleWare</finalName>

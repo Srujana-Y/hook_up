@@ -3,6 +3,10 @@
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <dependent-module archiveName="hook_up_BackEnd-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hook_up_BackEnd/hook_up_BackEnd">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="hook_up_MiddleWare"/>
         <property name="java-output-path" value="/hook_up_MiddleWare/target/classes"/>
     </wb-module>
