@@ -1,8 +1,7 @@
 package com.niit.configuration;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-//similar to web.xml
-//<servlet></servlet>
+
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer{
     public WebAppInitializer(){
     	System.out.println("WebAppInitializer class is loaded and Instantiated");
@@ -26,3 +25,4 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 	}
 
 }
+

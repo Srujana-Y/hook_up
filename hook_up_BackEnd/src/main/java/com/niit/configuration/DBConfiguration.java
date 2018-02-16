@@ -14,8 +14,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.model.User;
 
-//import com.niit.model.Employee;
-//import com.niit.model.User;
 
 @Configuration
 @EnableTransactionManagement
@@ -40,8 +38,10 @@ public class DBConfiguration {
 	public DataSource getDataSource() {
 	    BasicDataSource dataSource = new BasicDataSource();
 	    dataSource.setDriverClassName("oracle.jdbc.OracleDriver");
+	    System.out.println("Oracle Driver Loaded");
 	    dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
-	    dataSource.setUsername("test");
+	    System.out.println("Connected");
+	    dataSource.setUsername("ABHISHEK");
 	    dataSource.setPassword("pass");
 	    return dataSource;
 	    

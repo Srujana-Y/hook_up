@@ -8,7 +8,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="user_s180250")
 public class User {
-    
+	
 	@Id
 	private String email;
 	@Column(nullable=false)
@@ -20,6 +20,7 @@ public class User {
 	private String role;
 	@Column(name="online_status")
 	private boolean online;
+	
 	public String getEmail() {
 		return email;
 	}
@@ -62,6 +63,5 @@ public class User {
 	public void setOnline(boolean online) {
 		this.online = online;
 	}
-	
-	
+
 }
