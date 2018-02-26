@@ -1,8 +1,8 @@
-{{errorMessage.message}}
+{{error.message}}
 <form>
 <div class="form-group">
 Enter email address 
-<input type="email" ng-model="user.email" class="form-control">
+<input type="email" ng-model="user.email" class="form-control" disabled>
 </div>
 
 <div class="form-group">
@@ -33,6 +33,6 @@ Select ROLE
 <option value="ALUMNI">Alumni
 </select>
 </div>
-<input type="submit" ng-click="registerUser(user)" value="Register">
+<input type="submit" ng-click="updateUser(user)" value="Edit Profile">
 
 </form>

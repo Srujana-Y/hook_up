@@ -1,16 +1,42 @@
 /**
  * 
  */
+var app=angular.module('app',['ngRoute','ngCookies'])
 
-var app=angular.module('app',['ngRoute'])
 app.config(function($routeProvider){
 	$routeProvider
 	.when('/register',{
-		templateUrl:'views/registerform.html',
+		templateUrl:'views/registrationform.html',
 		controller:'UserController'
 	})
-	
-	.otherwise({
-		template:'views/home.html'
+	.when('/login',{
+		templateUrl:'views/login.html',
+		controller:'UserController'
 	})
+	.when('/edituserprofile',{
+		templateUrl:'views/edituserprofile.html',
+		controller:'UserController'
+		
+	})
+	.otherwise({
+		templateUrl:'views/home.html'
+	})
+})
+
+app.run(function($location,$rootScope,$cookieStore,UserService){
+	if($rootScope.loggedInUser==undefined)
+		$rootScope.loggedInUser=$cookieStore.get('currentuser')
+		
+	$rootScope.logout=function(){
+		UserService.logout().then(function(reponse){
+			delete $rootScope.loggedInUser;
+			$cookieStore.remove('currentuser');
+			$rootScope.message="Successfully Logged Out";
+			$location.path('/login')
+		},function(response){
+			$rootScope.error=response.data
+			if(response.status==401)
+				$location.path('/login')
+		})
+	}
 })
