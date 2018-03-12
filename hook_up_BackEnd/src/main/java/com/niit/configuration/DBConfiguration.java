@@ -12,7 +12,11 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.model.BlogComment;
+import com.niit.model.BlogPost;
+import com.niit.model.BlogPostLikes;
 import com.niit.model.Job;
+import com.niit.model.Notification;
 import com.niit.model.User;
 
 
@@ -32,7 +36,7 @@ public class DBConfiguration {
 		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
 		lsf.addProperties(hibernateProperties);
-		Class classes[]=new Class[]{User.class,Job.class};//class objects of all entities
+		Class classes[]=new Class[]{User.class,Job.class,BlogPost.class,Notification.class,BlogPostLikes.class,BlogComment.class};//class objects of all entities
 	    return lsf.addAnnotatedClasses(classes).buildSessionFactory();
 	}
 	@Bean
@@ -42,7 +46,7 @@ public class DBConfiguration {
 	    System.out.println("Oracle Driver Loaded");
 	    dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
 	    System.out.println("Connected");
-	    dataSource.setUsername("test");
+	    dataSource.setUsername("ABHISHEK");
 	    dataSource.setPassword("pass");
 	    return dataSource;
 	    
