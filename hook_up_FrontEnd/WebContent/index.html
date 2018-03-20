@@ -58,6 +58,22 @@
 							</ul>
 							</li> 	
 							
+							
+						<li class="dropdown"><a href="" class="dropdown-toggle"
+							data-toggle="dropdown" ng-show="loggedInUser.firstname!=undefined">Friend<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+								<li><a href="#/suggestedusers">Suggested Users</a></li>
+								<li><a href="#/pendingrequests">Pending Requests</a></li>
+								<li><a href="#/friends">Friends</a></li>
+							</ul>
+							</li>	
+							
+							
+						<li><a href="#profilepic" ng-show="loggedInUser.firstname!=undefined">
+                    <img src="http://localhost:8081/proj2coll_middleware/getimage/{{loggedInUser.email}}" alt="Upload Picture" width="30px" height="30px" class="img-circle">
+                    </a></li>	
+							
 						<li class="dropdown"><a href="" class="dropdown-toggle"
 							data-toggle="dropdown" ng-show="loggedInUser.firstname">
 						<span class="glyphicon glyphicon-globe">
@@ -103,5 +119,7 @@
 <script type="text/javascript" src="controllers/blogdetailscontroller.js"></script>
 <script type="text/javascript" src="services/notificationservice.js"></script>
 <script type="text/javascript" src="controllers/notificationcontroller.js"></script>
+<script type="text/javascript" src="services/friendservice.js"></script>
+<script type="text/javascript" src="controllers/friendcontroller.js"></script>
 
-</html>
+</html>>
