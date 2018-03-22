@@ -9,7 +9,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="friend_s180250")
-public class Friend {
+public class Friend 
+{
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
