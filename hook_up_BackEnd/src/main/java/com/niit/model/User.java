@@ -7,7 +7,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="user_s180250")
-public class User {
+public class User 
+{
 	
 	@Id
 	private String email;
