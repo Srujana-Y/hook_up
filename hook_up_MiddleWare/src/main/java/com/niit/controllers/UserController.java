@@ -71,7 +71,7 @@ public class UserController {
 		
 		User user = userDao.getUser(email);
 		user.setOnline(false);
-		userDao.update(user);
+		userDao.update(user);//update online to false
 		session.removeAttribute("loginId");
 		session.invalidate();
 		return new ResponseEntity<User>(user,HttpStatus.OK);

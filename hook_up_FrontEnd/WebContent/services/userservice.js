@@ -6,24 +6,24 @@ app.factory('UserService',function($http){
 	var userService={}
 	
 	userService.registerUser=function(user){
-		return $http.post("http://localhost:8085/hook_up_MiddleWare/registeruser",user)
+		return $http.post("http://localhost:8005/hook_up_MiddleWare/registeruser",user)
 	}
 	
 	userService.login=function(user){
-		return $http.post("http://localhost:8085/hook_up_MiddleWare/login",user)
+		return $http.post("http://localhost:8005/hook_up_MiddleWare/login",user)
 	}
 	
 	
 	userService.logout=function(){
-		return $http.put("http://localhost:8085/hook_up_MiddleWare/logout")
+		return $http.put("http://localhost:8005/hook_up_MiddleWare/logout")
 	}
 	
 	userService.getUser=function(){
-		return $http.get("http://localhost:8085/hook_up_MiddleWare/getuser")
+		return $http.get("http://localhost:8005/hook_up_MiddleWare/getuser")
 	}
 	
 	userService.updateUser=function(user){
-		return $http.put("http://localhost:8085/hook_up_MiddleWare/updateuser",user)
+		return $http.put("http://localhost:8005/hook_up_MiddleWare/updateuser",user)
 	}
 	
 	

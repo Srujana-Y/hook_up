@@ -28,7 +28,8 @@ public class UserDaoImpl implements UserDao {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
 		User user=(User)session.get(User.class,email);
-		
+		// if email is not unique, return ErrorClass object
+		// if email is unique, then call registerUser Method
 		if(user==null)
 		{
 			return true;
@@ -50,7 +51,7 @@ public class UserDaoImpl implements UserDao {
 	public void update(User validUser) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
-		session.update(validUser);
+		session.update(validUser);//online status to 1
 	}
 
 	public User getUser(String email) {

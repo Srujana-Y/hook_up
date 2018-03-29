@@ -48,7 +48,7 @@ public class DBConfiguration {
 	    System.out.println("Oracle Driver Loaded");
 	    dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
 	    System.out.println("Connected");
-	    dataSource.setUsername("ABHISHEK");
+	    dataSource.setUsername("test");
 	    dataSource.setPassword("pass");
 	    return dataSource;
 	    
