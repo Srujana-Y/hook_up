@@ -32,6 +32,7 @@ public class JobController {
 	@RequestMapping(value="/addjob",method=RequestMethod.POST)
 	public ResponseEntity<?> addJob(@RequestBody Job job,HttpSession session)
 	{
+		//Authentication
 		String email=(String)session.getAttribute("loginId");
 		if(email==null)
 		{
@@ -39,9 +40,11 @@ public class JobController {
 			return new ResponseEntity<ErrorClazz>(error,HttpStatus.UNAUTHORIZED);
 		}
 		
+		//user is Authenticated
 		User user=userDao.getUser(email);
 		
-		if(!user.getRole().equals("ADMIN")) {
+		if(!user.getRole().equals("ADMIN"))//if role is not ADMIN, Authorized to post JOB
+		{
 			ErrorClazz error=new ErrorClazz(5,"Access Denied");
 			return new ResponseEntity<ErrorClazz>(error,HttpStatus.UNAUTHORIZED);
 		}

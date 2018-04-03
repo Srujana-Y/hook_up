@@ -2,13 +2,17 @@ package com.niit.configuration;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer{
-    public WebAppInitializer(){
-    	System.out.println("WebAppInitializer class is loaded and Instantiated");
-    }
+public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer
+{
+
+	public WebAppInitializer()
+	{
+		System.out.println("WebAppInitilizer is loaded and instantiated");
+	}
 	
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
+		// TODO Auto-generated method stub
 		return new Class[]{DBConfiguration.class};
 	}
 
@@ -21,8 +25,7 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 	@Override
 	protected String[] getServletMappings() {
 		// TODO Auto-generated method stub
-		return new String[]{"/"};// <url-pattern>/</url-pattern> Any requests,it will forwarded to DispatcherServlet
+		return new String[] {"/"};
 	}
 
 }
-

@@ -1,6 +1,11 @@
 package com.niit.configuration;
 
+
 import java.util.Properties;
+
+
+
+
 
 import javax.sql.DataSource;
 
@@ -12,14 +17,18 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.niit.model.BlogComment;
-import com.niit.model.BlogPost;
-import com.niit.model.BlogPostLikes;
-import com.niit.model.Friend;
 import com.niit.model.Job;
-import com.niit.model.Notification;
-import com.niit.model.ProfilePicture;
 import com.niit.model.User;
+import com.niit.model.BlogPost;
+import com.niit.model.Notification;
+import com.niit.model.BlogPostLikes;
+import com.niit.model.BlogComment;
+import com.niit.model.ProfilePicture;
+import com.niit.model.Friend;
+
+
+
+
 
 
 @Configuration
@@ -45,11 +54,9 @@ public class DBConfiguration {
 	public DataSource getDataSource() {
 	    BasicDataSource dataSource = new BasicDataSource();
 	    dataSource.setDriverClassName("oracle.jdbc.OracleDriver");
-	    System.out.println("Oracle Driver Loaded");
 	    dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
-	    System.out.println("Connected");
 	    dataSource.setUsername("test");
-	    dataSource.setPassword("pass");
+	    dataSource.setPassword("password");
 	    return dataSource;
 	    
 	}
