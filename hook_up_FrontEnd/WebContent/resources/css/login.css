@@ -1,5 +1,4 @@
-@charset "ISO-8859-1";
-
+@CHARSET "ISO-8859-1";
 .error{
 	padding: 15px;
 	margin-bottom: 20px;
@@ -30,4 +29,13 @@
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border: 1px solid #000;
+}
+
+.liked{
+	
+	color:blue;
+}
+
+.default{
+	color:black;
 }

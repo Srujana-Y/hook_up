@@ -1,7 +1,6 @@
 /**
  * 
  */
-
 app.controller('NotificationCtrl',function($scope,$rootScope,$location,$routeParams,NotificationService){
 	
 	var id=$routeParams.id;

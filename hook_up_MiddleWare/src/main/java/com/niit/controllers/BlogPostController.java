@@ -1,6 +1,8 @@
 package com.niit.controllers;
 
 import java.util.Date;
+
+
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -81,7 +83,6 @@ public class BlogPostController {
 		List<BlogPost> blogs=blogPostDao.listOfBlogs(approved);
 		return new ResponseEntity<List<BlogPost>>(blogs,HttpStatus.OK);
 	}
-	
 	@RequestMapping(value="/getblog/{id}",method=RequestMethod.GET)
 	public ResponseEntity<?> getBlog(@PathVariable int id,HttpSession session)
 	{
@@ -95,7 +96,6 @@ public class BlogPostController {
 		BlogPost blogPost=blogPostDao.getBlog(id);
 		return new ResponseEntity<BlogPost>(blogPost, HttpStatus.OK); 
 	}
-	
 	@RequestMapping(value="/approve",method=RequestMethod.PUT)
 	public ResponseEntity<?> approve(@RequestBody BlogPost blog,HttpSession session)
 	{
@@ -141,8 +141,6 @@ public class BlogPostController {
 		
 		
 	}
-	
-	
 	@RequestMapping(value="/addcomment",method=RequestMethod.POST)
 	public ResponseEntity<?> addBlogComment(@RequestBody BlogComment blogComment,HttpSession session)
 	{

@@ -1,6 +1,7 @@
 package com.niit.dao;
 
 import org.hibernate.Query;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import javax.transaction.Transactional;
 import com.niit.model.BlogComment;
 import com.niit.model.BlogPost;
 import com.niit.model.Notification;
+
 
 @Repository
 @Transactional
@@ -34,14 +36,12 @@ public class BlogPostDaoImpl implements BlogPostDao{
 		List<BlogPost> blogs=query.list();
 		return blogs;
 	}
-
 	public BlogPost getBlog(int id) {
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.getCurrentSession();
 		BlogPost blogPost=(BlogPost)session.get(BlogPost.class,id);
 		return blogPost;
 	}
-
 	public void approve(BlogPost blog) {
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.getCurrentSession();
@@ -65,7 +65,6 @@ public class BlogPostDaoImpl implements BlogPostDao{
 		session.save(notification);
 		session.delete(blog);
 	}
-
 	public void addBlogComment(BlogComment blogComment) {
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.getCurrentSession();
@@ -81,4 +80,6 @@ public class BlogPostDaoImpl implements BlogPostDao{
 		return blogComments;
 	}
 
+
 }
+

@@ -9,19 +9,17 @@ import javax.persistence.Table;
 @Table(name="user_s180250")
 public class User 
 {
-	
 	@Id
 	private String email;
 	@Column(nullable=false)
 	private String password;
-	@Column(nullable=false)
+    @Column(nullable=false)
 	private String firstname;
 	private String lastname;
 	private String phonenumber;
 	private String role;
 	@Column(name="online_status")
 	private boolean online;
-	
 	public String getEmail() {
 		return email;
 	}
@@ -64,5 +62,8 @@ public class User
 	public void setOnline(boolean online) {
 		this.online = online;
 	}
+	
+	
+	
 
 }

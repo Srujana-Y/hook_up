@@ -5,8 +5,7 @@ import java.util.List;
 import com.niit.model.BlogComment;
 import com.niit.model.BlogPost;
 
-public interface BlogPostDao
-{
+public interface BlogPostDao {
 	
 	void addBlogPost(BlogPost blogPost);
 	List<BlogPost> listOfBlogs(int approved);

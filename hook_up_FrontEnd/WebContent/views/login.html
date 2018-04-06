@@ -1,5 +1,9 @@
 
-<span style="color:red">{{error.message}}</span>
+
+
+<div id="login-box">
+<span class="error" ng-show="error.message!=undefined">{{error.message}}</span>
+<span class="msg" ng-show="message!=undefined">{{message}}</span>
 <form>
 
  <table>
@@ -23,3 +27,4 @@
 
 
 </form>
+</div>

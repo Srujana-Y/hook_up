@@ -1,7 +1,6 @@
 /**
  * 
  */
-
 var app=angular.module('app',['ngRoute','ngCookies'])
 
 app.config(function($routeProvider){
@@ -59,9 +58,32 @@ app.config(function($routeProvider){
 		templateUrl:'views/home.html',
 		controller:'NotificationCtrl'
 	})
+	.when('/profilepic',{
+		templateUrl:'views/uploadprofilepic.html'
+	})
+	.when('/suggestedusers',{
+		templateUrl:'views/suggestedusers.html',
+		controller:'FriendCtrl'
+	})
+	.when('/pendingrequests',{
+		templateUrl:'views/pendingrequests.html',
+		controller:'FriendCtrl'
+	})
+	.when('/friends',{
+		templateUrl:'views/friendsList.html',
+		controller:'FriendCtrl'
+	})
+	.when('/chat',{
+		templateUrl:'views/chat.html',
+		controller:'ChatCtrl'
+	})
+	
 	.otherwise({
 		templateUrl:'views/home.html'
 	})
+
+
+
 })
 
 app.run(function($location,$rootScope,$cookieStore,UserService){
@@ -73,7 +95,7 @@ app.run(function($location,$rootScope,$cookieStore,UserService){
 			delete $rootScope.loggedInUser;
 			$cookieStore.remove('currentuser');
 			$rootScope.message="Successfully Logged Out";
-			$location.path('/login')
+			$location.path('/login');
 		},function(response){
 			$rootScope.error=response.data
 			if(response.status==401)

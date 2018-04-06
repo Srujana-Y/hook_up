@@ -42,5 +42,4 @@ public class NotificationDaoImpl implements NotificationDao {
 		notification.setViewed(true);
 		session.update(notification);
 	}
-
 }

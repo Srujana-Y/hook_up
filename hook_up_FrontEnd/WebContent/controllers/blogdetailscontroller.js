@@ -1,7 +1,6 @@
 /**
  * 
  */
-
 app.controller('BlogDetailsCtrl',function($scope,$location,BlogService,$rootScope,$sce,$routeParams){
 	var id=$routeParams.id;
 	$scope.rejectionTxt=false; 

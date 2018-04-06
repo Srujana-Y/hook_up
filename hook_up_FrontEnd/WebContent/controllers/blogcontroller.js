@@ -1,7 +1,6 @@
 /**
  * 
  */
-
 app.controller('BlogCtrl',function($scope,$location,$rootScope,BlogService){
 	
 	$scope.addBlog=function(blog){
